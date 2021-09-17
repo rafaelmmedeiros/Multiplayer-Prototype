@@ -13,6 +13,8 @@ public class GameNetworkPlayer : NetworkBehaviour
     [SyncVar(hook = nameof(HandleDisplayColorUpdated))]
     [SerializeField] private Color displayColor = Color.black;
 
+    #region Server
+
     [Server]
     public void SetDisplayName(string name)
     {
@@ -25,6 +27,18 @@ public class GameNetworkPlayer : NetworkBehaviour
         displayColor = color;
     }
 
+    [Command]
+    private void CmdSetDisplayName(string name)
+    {
+        RpcLogNewName(name);
+        // Server Vallidation
+        SetDisplayName(name);
+    }
+
+    #endregion
+
+    #region Client
+
     private void HandleDisplayNameUpdated(string oldName, string newName)
     {
         displayNameText.text = displayName;
@@ -34,4 +48,18 @@ public class GameNetworkPlayer : NetworkBehaviour
     {
         displayColorRenderer.material.SetColor("_BaseColor", newColor);
     }
+
+    [ContextMenu("Set Player Name")]
+    private void SetPlayerName()
+    {
+        CmdSetDisplayName("NEW NAME!");
+    }
+
+    [ClientRpc]
+    private void RpcLogNewName(string name)
+    {
+        Debug.Log(name);
+    }
+
+    #endregion
 }
