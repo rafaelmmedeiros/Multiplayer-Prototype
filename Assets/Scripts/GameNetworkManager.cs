@@ -9,7 +9,7 @@ public class GameNetworkManager : NetworkManager
 
         GameNetworkPlayer player = conn.identity.GetComponent<GameNetworkPlayer>();
 
-        player.SetDisplayName($"Player: {numPlayers}");
+        player.SetDisplayName($"Player {numPlayers}");
 
         player.SetDisplayColor(GenerateRandomColor());
     }
