@@ -3,8 +3,9 @@
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
 
-/_/
-/Mirror/
+/Assets/_/
+/Assets/Mirror/
+/Assets/TextMesh Pro/
 
 /[Ll]ibrary/
 /[Tt]emp/
