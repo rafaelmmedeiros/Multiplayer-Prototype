@@ -30,8 +30,10 @@ public class GameNetworkPlayer : NetworkBehaviour
     [Command]
     private void CmdSetDisplayName(string name)
     {
+        if (name.Length < 2 ||
+            name.Length > 20) return;
+
         RpcLogNewName(name);
-        // Server Vallidation
         SetDisplayName(name);
     }
 
