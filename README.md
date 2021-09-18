@@ -12,5 +12,5 @@ Case study of Mirror Asset.
 
 <a href="https://www.youtube.com/watch?v=6S31bw6Zu_k" 
 target="_blank"><img src="http://img.youtube.com/vi/6S31bw6Zu_k/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="" height="" border="0" /></a>
+alt="IMAGE ALT TEXT HERE" width="840" height="630" border="0" /></a>
 
